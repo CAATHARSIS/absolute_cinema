@@ -9,7 +9,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.LoadHTMLGlob("templates/*")
+	router.LoadHTMLGlob("internal/templates/*")
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(
