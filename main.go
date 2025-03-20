@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/CAATHARSIS/absolute_cinema/common/pkg/database"
+	"github.com/CAATHARSIS/absolute_cinema/go/pkg/common/database"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
