@@ -1,4 +1,4 @@
-package models
+package tiles
 
 import "gorm.io/gorm"
 

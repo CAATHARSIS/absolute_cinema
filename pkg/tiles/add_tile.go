@@ -1,9 +1,9 @@
-package models
+package tiles
 
 import (
 	"net/http"
 
-	"github.com/CAATHARSIS/absolute_cinema/go/pkg/models"
+	"github.com/CAATHARSIS/absolute_cinema/go/pkg/common/models"
 	"github.com/gin-gonic/gin"
 )
 
@@ -25,7 +25,7 @@ func (h handler) AddTile(c *gin.Context) {
 	var tile models.Tile
 
 	tile.Title = body.Title
-	tile.Derectors = body.Directors
+	tile.Directors = body.Directors
 	tile.Actors = body.Actors
 	tile.Description = body.Description
 
