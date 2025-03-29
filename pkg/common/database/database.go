@@ -3,7 +3,7 @@ package database
 import (
 	"log"
 
-	"github.com/CAATHARSIS/absolute_cinema/go/pkg/models"
+	"github.com/CAATHARSIS/absolute_cinema/go/pkg/common/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
