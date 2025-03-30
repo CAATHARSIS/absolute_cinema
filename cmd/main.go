@@ -1,9 +1,8 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/CAATHARSIS/absolute_cinema/go/pkg/common/database"
+	"github.com/CAATHARSIS/absolute_cinema/go/pkg/tiles"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
@@ -16,7 +15,7 @@ func main() {
 	dbUrl := viper.Get("DB_URL").(string)
 
 	router := gin.Default()
-	database.Init(dbUrl)
+	h := database.Init(dbUrl)
 
 	router.LoadHTMLGlob("internal/templates/*")
 
@@ -30,14 +29,16 @@ func main() {
 	// 	)
 	// })
 
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(
-			http.StatusOK,
-			gin.H{
-				"port":  port,
-				"dbUrl": dbUrl,
-			})
-	})
+	// router.GET("/", func(c *gin.Context) {
+	// 	c.JSON(
+	// 		http.StatusOK,
+	// 		gin.H{
+	// 			"port":  port,
+	// 			"dbUrl": dbUrl,
+	// 		})
+	// })
+
+	tiles.RegisterRouters(router, h)
 
 	router.Run(port)
 }
