@@ -8,10 +8,10 @@ import (
 )
 
 type AddTileRequestBody struct {
-	Title       string   `json:"title"`
-	Directors   []string `json:"directors"`
-	Actors      []string `json:"actors"`
-	Description string   `json:"descriptioin"`
+	Title       string `json:"title"`
+	Directors   string `json:"directors"`
+	Actors      string `json:"actors"`
+	Description string `json:"descriptioin"`
 }
 
 func (h handler) AddTile(c *gin.Context) {

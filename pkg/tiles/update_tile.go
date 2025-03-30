@@ -8,10 +8,10 @@ import (
 )
 
 type UpdateTileRequestBody struct {
-	Title       string   `json:"title"`
-	Directors   []string `json:"directors"`
-	Actors      []string `json:"actors"`
-	Description string   `json:"description"`
+	Title       string `json:"title"`
+	Directors   string `json:"directors"`
+	Actors      string `json:"actors"`
+	Description string `json:"description"`
 }
 
 func (h handler) UpdateTile(c *gin.Context) {
@@ -39,4 +39,3 @@ func (h handler) UpdateTile(c *gin.Context) {
 
 	c.JSON(http.StatusOK, &tile)
 }
-

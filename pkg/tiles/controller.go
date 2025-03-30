@@ -18,6 +18,9 @@ func RegisterRouters(r *gin.Engine, db *gorm.DB) {
 	routers.POST("/", h.AddTile)
 	routers.GET("/", h.GetTiles)
 	routers.GET("/:id", h.GetTile)
+	routers.GET("/:id/", h.GetTile)
 	routers.PUT("/:id", h.UpdateTile)
+	routers.PUT("/:id/", h.UpdateTile)
 	routers.DELETE("/:id", h.DeleteTile)
+	routers.DELETE("/:id/", h.DeleteTile)
 }
